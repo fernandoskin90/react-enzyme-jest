@@ -1,0 +1,31 @@
+{
+  "name": "react-enzyme-jest",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "jest",
+    "debug": "jest --watch",
+    "eject": "react-scripts eject"
+  },
+  "jest": {
+    "setupTestFrameworkScriptFile": "<rootDir>/setupTests.js"
+  },
+  "dependencies": {
+    "jsdom": "^12.0.0",
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2",
+    "react-scripts": "1.1.4"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "enzyme": "^3.4.4",
+    "enzyme-adapter-react-16": "^1.2.0",
+    "enzyme-to-json": "^3.3.4",
+    "jest": "^23.5.0"
+  }
+}
