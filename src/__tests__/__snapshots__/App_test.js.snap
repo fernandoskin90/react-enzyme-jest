@@ -13,6 +13,11 @@ exports[`<App /> mount renderig matches the snapshots 1`] = `
       >
         Welcome to React
       </h1>
+      <h3
+        className="blue"
+      >
+        Hello!
+      </h3>
     </header>
     <ul>
       <li>
@@ -47,6 +52,11 @@ exports[`<App /> mount renderig matches the snapshots 1`] = `
     <title
       text="some string"
     />
+    <h2 />
+    <input
+      onChange={[Function]}
+      type="text"
+    />
   </div>
 </App>
 `;
@@ -63,6 +73,11 @@ exports[`<App /> shallow renderig matches the snapshots 1`] = `
     >
       Welcome to React
     </h1>
+    <h3
+      className="blue"
+    >
+      Hello!
+    </h3>
   </header>
   <ul>
     <li>
@@ -96,6 +111,11 @@ exports[`<App /> shallow renderig matches the snapshots 1`] = `
   </button>
   <title
     text="some string"
+  />
+  <h2 />
+  <input
+    onChange={[Function]}
+    type="text"
   />
 </div>
 `;

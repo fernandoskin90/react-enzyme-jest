@@ -13,12 +13,28 @@ describe("<App /> shallow renderig", () => {
     const tree = shallow(<App />)
     expect(toJson(tree)).toMatchSnapshot()
   });
+  it('updates className with new state', () => {
+    const wrapper = shallow(<App />);
+    expect(wrapper.find('.blue').length).toBe(1);
+    expect(wrapper.find(".red").length).toBe(0);
+    // set state
+    wrapper.setState({ mainColor: 'red'});
+    expect(wrapper.find(".blue").length).toBe(0);
+    expect(wrapper.find(".red").length).toBe(1);
+  });
   it('on button click changes p text', () => {
     const wrapper = shallow(<App />);
     const button = wrapper.find('button');
     expect(wrapper.find('.button-state').text()).toBe('!No');
     button.simulate('click');
     expect(wrapper.find('.button-state').text()).toBe('Yes!')
+  });
+  it('On input change, title change text', () => {
+    const wrapper = shallow(<App />);
+    const input = wrapper.find('input');
+    expect(wrapper.find('h2').text()).toBe('');
+    input.simulate('change', { target: { value: 'Fernando' }});
+    expect(wrapper.find('h2').text()).toBe('Fernando');
   });
 });
 
