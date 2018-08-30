@@ -8,7 +8,18 @@ class App extends Component {
   state = {
     on: false,
     input: '',
-    mainColor: 'blue'
+    mainColor: 'blue',
+    lifeCycle: ''
+  }
+  componentDidMount() {
+    this.setState({ lifeCycle: 'componentDidMount' })
+  }
+  componentWillReceiveProps() {
+    this.setState({ lifeCycle: "componentWillReceiveProps" });
+  }
+
+  handleStrings(str) {
+    return str ? true : false
   }
   render() {
     return (
@@ -30,6 +41,7 @@ class App extends Component {
         <title text='some string' />
         <h2>{this.state.input}</h2>
         <input type="text" onChange={(e) => this.setState({input: e.target.value})}/>
+        <p className="lifeCycle">{this.state.lifeCycle}</p>
       </div>
     );
   }

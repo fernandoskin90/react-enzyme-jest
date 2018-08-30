@@ -57,6 +57,11 @@ exports[`<App /> mount renderig matches the snapshots 1`] = `
       onChange={[Function]}
       type="text"
     />
+    <p
+      className="lifeCycle"
+    >
+      componentDidMount
+    </p>
   </div>
 </App>
 `;
@@ -117,5 +122,10 @@ exports[`<App /> shallow renderig matches the snapshots 1`] = `
     onChange={[Function]}
     type="text"
   />
+  <p
+    className="lifeCycle"
+  >
+    componentDidMount
+  </p>
 </div>
 `;

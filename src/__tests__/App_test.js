@@ -22,6 +22,36 @@ describe("<App /> shallow renderig", () => {
     expect(wrapper.find(".blue").length).toBe(0);
     expect(wrapper.find(".red").length).toBe(1);
   });
+  /**
+   * test lifes cycleMethod
+   */
+  // componentDidMount
+  it('calls componentDidMount, updates p tag text', () => {
+    jest.spyOn(App.prototype, 'componentDidMount');
+    const wrapper = shallow(<App />);
+    expect(App.prototype.componentDidMount.mock.calls.length).toBe(1);
+    expect(wrapper.find('.lifeCycle').text()).toBe('componentDidMount');
+  });
+  // componentWillReciveProps
+  it("setProps calls componentWillReceiveProps", () => {
+    jest.spyOn(App.prototype, "componentWillReceiveProps");
+    const wrapper = shallow(<App />);
+    wrapper.setProps({ hide: true });
+    expect(App.prototype.componentWillReceiveProps.mock.calls.length).toBe(1);
+    expect(wrapper
+        .find(".lifeCycle")
+        .text()).toBe("componentWillReceiveProps");
+  });
+  /**
+   * test methods
+   */
+  it('handleStrings functions return correctly', () => {
+    const wrapper = shallow(<App />);
+    const trueReturn = wrapper.instance().handleStrings('Hello World');
+    const falseReturn = wrapper.instance().handleStrings("");
+    expect(trueReturn).toBe(true);
+    expect(falseReturn).toBe(false);
+  });
   it('on button click changes p text', () => {
     const wrapper = shallow(<App />);
     const button = wrapper.find('button');
