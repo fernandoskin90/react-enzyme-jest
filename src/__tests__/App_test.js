@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App, { Link } from './App';
+import App, { Link } from '../App';
 import { shallow, mount } from 'enzyme';
 import toJson from 'enzyme-to-json'
 
